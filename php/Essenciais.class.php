@@ -12,7 +12,7 @@
 		* Função para configurar codificação da página
 		* @access public 
 		* @param string $tipo 
-		* @return null
+		* @return void
 		*/ 
 		public function setHeader($tipo) {
 			switch ($tipo) {
