@@ -1,6 +1,6 @@
 # PacotinhoDeClasses Feliz *-*
 
-#[ REGRAS PARA NOOB'S DE PRIMEIRA VIAGEM: ]
+#[ REGRAS PARA NOOB'S ] 
 
 	- Nome dos arquivos/class tipo camelcase (Certo: ClasseDeDeus, UploadMagico. Errado: classe_de_DEUS, uploadmagico, Up1L0Ad_-_M4g1k0 )
 	
