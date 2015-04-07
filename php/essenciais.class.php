@@ -7,7 +7,7 @@
 	*
 	*/ 
 	
-	class essenciais {
+	class Essenciais {
 		
 		/** 
 		* Função para configurar codificação da página
