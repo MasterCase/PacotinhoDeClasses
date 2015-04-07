@@ -1,5 +1,7 @@
 # PacotinhoDeClasses Feliz *-*
 
+### [Acessar Wiki](https://github.com/MasterCase/PacotinhoDeClasses/wiki)
+
 #[ REGRAS PARA NOOB'S ] 
 
 	- Nome dos arquivos/class tipo camelcase
