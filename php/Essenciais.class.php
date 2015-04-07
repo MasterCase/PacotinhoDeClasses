@@ -1,10 +1,9 @@
 <?php 
 		
 	/** 
-	* Classe com funções essenciais
+	* Classe com funções Essenciais
 	* @author Gabriel A. Barbosa <tx.gabrielbarbosa@gmail.com> 
 	* @version 0.1 
-	*
 	*/ 
 	
 	class Essenciais {
@@ -12,7 +11,8 @@
 		/** 
 		* Função para configurar codificação da página
 		* @access public 
-		* @param Integer $tipo 
+		* @param string $tipo 
+		* @return null
 		*/ 
 		public function setHeader($tipo) {
 			switch ($tipo) {
