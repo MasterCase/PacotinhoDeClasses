@@ -1,4 +1,4 @@
-# PacotinhoDeClasses Feliz *-*
+# Pacotinho De Classes Feliz :smile:
 
 ### [Acessar Wiki](https://github.com/MasterCase/PacotinhoDeClasses/wiki)
 
