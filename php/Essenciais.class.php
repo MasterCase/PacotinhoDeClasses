@@ -14,7 +14,7 @@
 		* @access public 
 		* @param Integer $tipo 
 		*/ 
-		public function set_header($tipo) {
+		public function setHeader($tipo) {
 			switch ($tipo) {
 				case "UTF-8":
 					header('Content-type: text/html; charset=UTF-8');
