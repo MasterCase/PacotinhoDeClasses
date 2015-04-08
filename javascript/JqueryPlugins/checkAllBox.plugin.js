@@ -7,17 +7,19 @@
      *	@version 1.0.0
      */
     $.fn.checkAllBox = function( options ) {
+        
 
         /**
          *	Settings Default
          */
         var settings = $.extend({
             forceChecked: null,
+            checkBoxDiv: "input[type=checkbox]",
             debug: false,
-            eventChecked: function() {
+            eventChecked: function(obj) {
                 debugx("Event: eventChecked Iniciado..!");
             },
-            eventUnChecked: function() {
+            eventUnChecked: function(obj) {
                 debugx("Event: eventUnChecked Iniciado..!");
             }
         }, options);
@@ -31,18 +33,6 @@
             }
         }
         debugx("========= checkAllBox ========= init()");
-
-        /**
-         *	Pega status do botão principal
-        */
-        var isChecked = $(this).prop("checked");
-        debugx("this.prop(checked) =  " + isChecked);
-        if(isChecked) {
-            isChecked = true;
-        } else {
-            isChecked = false;
-        }
-        debugx("var isChecked = "+isChecked);
 
 
         /**
@@ -60,21 +50,50 @@
         /**
          *	Init das operações
          */
-        if(settings.forceChecked != null) {
-            if(settings.forceChecked) {
-                setAllCheckBox(this, true);
-                settings.eventChecked();
-            } else {
-                setAllCheckBox(this, false);
-                settings.eventUnChecked();
+        $(this).click(function() {
+
+            /**
+             *	Pega status do botão principal
+             *  Pega tagName e tagType do This
+             */
+
+            var tagName = $(this).prop("tagName");
+            var tagType = $(this).prop("type");
+
+            var isChecked = ($(this).prop("checked")) ? true : false;
+
+            if(tagName == "INPUT" && tagType == "checkbox") {
+               if(isChecked) { isChecked = false; } else {  isChecked = true; }
             }
-        } else if(isChecked) {
-            setAllCheckBox(this, true);
-            settings.eventChecked();
-        } else {
-            setAllCheckBox(this, false);
-            settings.eventUnChecked();
-        }
+
+            debugx("this.prop(checked) =  " + isChecked);
+            if(!isChecked) {
+                $(this).prop("checked",true);
+                isChecked = true;
+            } else {
+                $(this).prop("checked",false);
+                isChecked = false;
+            }
+            debugx("var isChecked = "+isChecked);
+
+            if(settings.forceChecked != null) {
+                if(settings.forceChecked) {
+                    setAllCheckBox(settings.checkBoxDiv, true);
+                    settings.eventChecked(this);
+                } else {
+                    setAllCheckBox(settings.checkBoxDiv, false);
+                    settings.eventUnChecked(this);
+                }
+            } else if(isChecked) {
+                setAllCheckBox(settings.checkBoxDiv, true);
+                settings.eventChecked(this);
+            } else {
+                setAllCheckBox(settings.checkBoxDiv, false);
+                settings.eventUnChecked(this);
+            }
+
+
+        });
 
     };
 
