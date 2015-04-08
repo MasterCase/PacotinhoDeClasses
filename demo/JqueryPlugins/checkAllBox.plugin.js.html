@@ -6,11 +6,12 @@
 			<script src="../../javascript/JqueryPlugins/checkAllBox.plugin.js"></script>
 			
 			<script>
-				function checkAll() { 
-				
-					$("input[type=checkbox]").checkAllBox({
+				$(function() {
+ 
+					$("#btnCheckAll").checkAllBox({
 						forceChecked: null,
 						debug: false, 
+						checkBoxDiv: "input[type=checkbox]",
 						eventChecked: function() { 
 							console.log("Evento executado quando é checked!");
 						}, 
@@ -19,13 +20,13 @@
 						} 
 					});
 					
-				}
+				});
 			</script>
 			
 	</head>
 	<body>
 	
-		<a onclick="return checkAll()" href="javascript:void(0);"> SELECIONAR TODOS </a>
+		<a id="btnCheckAll" href="javascript:void(0);"> SELECIONAR TODOS </a>
 		<input type="checkbox" value="11">
 		<input type="checkbox" value="12">
 		<input type="checkbox" value="13">
