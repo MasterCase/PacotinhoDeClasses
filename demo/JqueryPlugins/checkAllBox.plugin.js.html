@@ -1,0 +1,38 @@
+<html>
+	<head>
+			<title>Check All Box Plugin Jquery </title>
+			
+			<script src="../../javascript/jquery/jquery-1.11.2.min.js"></script>
+			<script src="../../javascript/JqueryPlugins/checkAllBox.plugin.js"></script>
+			
+			<script>
+				function checkAll() { 
+				
+					$("input[type=checkbox]").checkAllBox({
+						forceChecked: null,
+						debug: false, 
+						eventChecked: function() { 
+							console.log("Evento executado quando é checked!");
+						}, 
+						eventUnChecked: function() { 
+							console.log("Evento executado quando é unchecked!");
+						} 
+					});
+					
+				}
+			</script>
+			
+	</head>
+	<body>
+	
+		<a onclick="return checkAll()" href="javascript:void(0);"> SELECIONAR TODOS </a>
+		<input type="checkbox" value="11">
+		<input type="checkbox" value="12">
+		<input type="checkbox" value="13">
+		<input type="checkbox" value="14">
+		<input type="checkbox" value="15">
+		<input type="checkbox" value="16">
+		<input type="checkbox" value="17">
+		
+	</body>
+</html>
